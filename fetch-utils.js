@@ -32,7 +32,8 @@ export async function getTodos() {
     // get all todos for this user from supabase
     const response = await client 
         .from('todos')
-        .select('*');
+        .select('*')
+        .order('id', { ascending: true });
 
     return checkError(response);
 }
@@ -42,8 +43,7 @@ export async function completeTodo(id) {
     const response = await client 
         .from('todos')
         .update({ complete: true })
-        .match({ id })
-        .order('id', { decending: true });
+        .match({ id });
 
     return checkError(response);
 }

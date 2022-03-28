@@ -20,8 +20,43 @@
     padding: 10px;
 }
 
-.todo-form button {
-    margin-left: 10px;
+#submit {
+    position: relative;
+    background-color: #2B2D2F;
+    color: lightgreen;
+    border: none;
+    border-radius: .125em;
+    padding: 1em  3em;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+#submit.animating {
+    background-color: transparent;
+    color: transparent;
+    user-select: none;
+    cursor: default;
+}
+#submit::before{
+    content: "";
+    position: absolute;
+    background-color: #2B2D2F;
+    /* background-color: red; */
+    inset: 0;
+    border-radius: .125em;
+    animation: squish 300ms;
+    animation-fill-mode: forwards;
+}
+
+#submit.animating::before{
+    display: block;
+}
+
+@keyframes squish {
+    100% {
+        left: -10%;
+        right: -10%;
+    }
 }
 
 .todo {
@@ -31,8 +66,10 @@
     margin: 10px;
 }
 
-.incomplete {
+.incomplete:hover {
     cursor: pointer;
+    background-color: red;
+    text-decoration: line-through;
 }
 
 .complete {
@@ -45,3 +82,4 @@
     margin: 20px;
     font-size: 1.3rem;
 }
+
