@@ -17,6 +17,9 @@
     </head>
 
     <body>
+        <div class="load-wrapper hidden">
+            <span class="loading-spinner">Loading...</span>
+        </div>
         <header>
             <div class="gutter-right logo">
                 <h3>Todos</h3>
@@ -26,7 +29,7 @@
             <button id="logout">Logout</button>
             <form class="todo-form">
                 <input name="todo" required />
-                <button>Add todo</button>
+                <button id="submit" class="">Submit</button>
             </form>
             <button class="delete-button">Delete all todos?</button>
             <div class="todos"></div>

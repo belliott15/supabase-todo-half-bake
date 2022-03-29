@@ -21,7 +21,17 @@
 }
 
 .todo-form button {
+    background-color: #2B2D2F;
+    color: lightgreen;
+    border-radius: .125em;
+    padding: 1em  3em;
+    font-weight: bold;
     margin-left: 10px;
+    height: 40px;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .todo {
@@ -31,8 +41,10 @@
     margin: 10px;
 }
 
-.incomplete {
+.incomplete:hover {
     cursor: pointer;
+    background-color: red;
+    text-decoration: line-through;
 }
 
 .complete {
@@ -45,3 +57,4 @@
     margin: 20px;
     font-size: 1.3rem;
 }
+
